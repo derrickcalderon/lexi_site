@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current CX — Brand Style Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Style Guide specific styles */
+    .guide-hero { min-height: 50vh; display: flex; align-items: center; background: var(--deep-tide); padding-top: 100px; }
+    .guide-hero h1 { color: var(--snow); }
+    .guide-hero p { color: var(--mist); font-size: 1.25rem; max-width: 600px; }
+    .guide-section { padding: 80px 0; border-bottom: 1px solid var(--mist); }
+    .guide-section:last-of-type { border-bottom: none; }
+    .guide-section h2 { margin-bottom: 12px; }
+    .guide-section > .container > p { margin-bottom: 48px; color: var(--stone); }
+
+    /* Color swatches */
+    .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px; }
+    .color-swatch { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); }
+    .swatch-preview { height: 120px; }
+    .swatch-info { padding: 16px; background: white; }
+    .swatch-info h4 { font-size: 0.9375rem; margin-bottom: 4px; }
+    .swatch-info code { font-size: 0.8125rem; color: var(--stone); background: var(--snow); padding: 2px 8px; border-radius: 4px; }
+    .swatch-info p { font-size: 0.8125rem; color: var(--stone); margin-top: 8px; }
+
+    /* Type scale */
+    .type-scale { display: flex; flex-direction: column; gap: 32px; }
+    .type-row { display: flex; align-items: baseline; gap: 32px; padding: 24px 0; border-bottom: 1px solid var(--mist); }
+    .type-label { min-width: 180px; flex-shrink: 0; }
+    .type-label h4 { font-size: 0.8125rem; color: var(--stone); text-transform: uppercase; letter-spacing: 0.1em; }
+    .type-label code { font-size: 0.75rem; color: var(--current-teal); }
+    .type-sample { flex: 1; }
+
+    /* Logo section */
+    .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .logo-card { padding: 60px 40px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; }
+    .logo-dark { background: var(--deep-tide); }
+    .logo-light { background: var(--snow); border: 1px solid var(--mist); }
+    .logo-text { font-family: var(--font-primary); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; }
+    .logo-text span { color: var(--current-teal); }
+
+    /* Component showcase */
+    .component-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .component-row h4 { width: 100%; font-size: 0.875rem; color: var(--stone); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+
+    /* Voice section */
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .voice-card { padding: 32px; border-radius: var(--radius-md); }
+    .voice-do { background: rgba(45, 212, 191, 0.08); border: 1px solid rgba(45, 212, 191, 0.2); }
+    .voice-dont { background: rgba(249, 112, 104, 0.08); border: 1px solid rgba(249, 112, 104, 0.2); }
+    .voice-card h4 { margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .voice-card li { padding: 8px 0; font-size: 0.9375rem; color: var(--slate); }
+
+    /* Gradient demo */
+    .gradient-demo { height: 120px; border-radius: var(--radius-md); margin-top: 24px; }
+
+    @media (max-width: 768px) {
+      .type-row { flex-direction: column; gap: 8px; }
+      .type-label { min-width: auto; }
+      .logo-grid, .voice-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Current <span>CX</span></a>
+      <div class="nav-links">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#logo">Logo</a>
+        <a href="#components">Components</a>
+        <a href="#voice">Voice</a>
+        <a href="index.html" class="nav-cta">← Back to Site</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="guide-hero">
+    <div class="container">
+      <div class="hero-badge"><span>Internal Document</span></div>
+      <h1>Brand Style Guide</h1>
+      <p>The visual and verbal identity system for Current CX. This guide ensures consistency across every touchpoint.</p>
+    </div>
+  </section>
+
+  <!-- COLORS -->
+  <section class="guide-section" id="colors">
+    <div class="container">
+      <div class="section-label">Color Palette</div>
+      <h2>Colors</h2>
+      <p>Our palette draws from deep ocean tones — evoking trust, clarity, and forward momentum. The teal accent provides energy and signals action.</p>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#0A1628;"></div>
+          <div class="swatch-info"><h4>Deep Tide</h4><code>#0A1628</code><p>Primary backgrounds, nav, text</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#162238;"></div>
+          <div class="swatch-info"><h4>Midnight Blue</h4><code>#162238</code><p>Card backgrounds, sections</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#2DD4BF;"></div>
+          <div class="swatch-info"><h4>Current Teal</h4><code>#2DD4BF</code><p>CTAs, links, highlights, accents</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#F97068;"></div>
+          <div class="swatch-info"><h4>Warm Coral</h4><code>#F97068</code><p>Secondary accent, alerts</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#F8FAFC;"></div>
+          <div class="swatch-info"><h4>Snow</h4><code>#F8FAFC</code><p>Page backgrounds, white space</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#E2E8F0;"></div>
+          <div class="swatch-info"><h4>Mist</h4><code>#E2E8F0</code><p>Borders, dividers</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#94A3B8;"></div>
+          <div class="swatch-info"><h4>Stone</h4><code>#94A3B8</code><p>Secondary text, captions</p></div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-preview" style="background:#334155;"></div>
+          <div class="swatch-info"><h4>Slate</h4><code>#334155</code><p>Body text on light backgrounds</p></div>
+        </div>
+      </div>
+      <h3 style="margin-top:48px; margin-bottom:12px;">Gradient</h3>
+      <p style="margin-bottom: 16px;">Use sparingly for hero sections and feature highlights.</p>
+      <div class="gradient-demo" style="background:linear-gradient(135deg, #0A1628 0%, #1E3A5F 50%, #2DD4BF 100%);"></div>
+      <code style="color:var(--stone); font-size:0.8125rem;">linear-gradient(135deg, #0A1628 0%, #1E3A5F 50%, #2DD4BF 100%)</code>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="guide-section" id="typography">
+    <div class="container">
+      <div class="section-label">Typography</div>
+      <h2>Type Scale</h2>
+      <p>Inter is our primary typeface — clean, modern, and highly readable. Space Grotesk is used for accent elements like statistics and numbers.</p>
+      <div class="type-scale">
+        <div class="type-row">
+          <div class="type-label"><h4>Display / H1</h4><code>Inter 700 · 56–72px</code></div>
+          <div class="type-sample"><h1 style="font-size:3.5rem;">Your Customers Deserve Better.</h1></div>
+        </div>
+        <div class="type-row">
+          <div class="type-label"><h4>H2</h4><code>Inter 600 · 36–48px</code></div>
+          <div class="type-sample"><h2>Numbers that speak for themselves.</h2></div>
+        </div>
+        <div class="type-row">
+          <div class="type-label"><h4>H3</h4><code>Inter 600 · 24–32px</code></div>
+          <div class="type-sample"><h3>Retained CX Partner</h3></div>
+        </div>
+        <div class="type-row">
+          <div class="type-label"><h4>Body</h4><code>Inter 400 · 16–18px</code></div>
+          <div class="type-sample"><p>Fractional CX leadership for eCommerce brands ready to scale support, reduce churn, and turn customers into advocates.</p></div>
+        </div>
+        <div class="type-row">
+          <div class="type-label"><h4>Accent Numbers</h4><code>Space Grotesk 700</code></div>
+          <div class="type-sample"><span class="accent-font" style="font-size:3rem; font-weight:700; color:var(--current-teal);">1500%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section class="guide-section" id="logo">
+    <div class="container">
+      <div class="section-label">Logo</div>
+      <h2>Logo Usage</h2>
+      <p>Our logo is a simple typographic wordmark. "Current" uses the primary font weight, and "CX" is always rendered in Current Teal.</p>
+      <div class="logo-grid">
+        <div class="logo-card logo-dark">
+          <span class="logo-text" style="color:var(--snow);">Current <span>CX</span></span>
+        </div>
+        <div class="logo-card logo-light">
+          <span class="logo-text" style="color:var(--deep-tide);">Current <span>CX</span></span>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <h3 style="margin-bottom:16px;">Guidelines</h3>
+        <ul style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <li style="display:flex;align-items:center;gap:8px;color:var(--current-teal);font-size:0.9375rem;">✓ <span style="color:var(--slate);">Always use Inter Bold (800) for the wordmark</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--current-teal);font-size:0.9375rem;">✓ <span style="color:var(--slate);">"CX" is always in Current Teal (#2DD4BF)</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--current-teal);font-size:0.9375rem;">✓ <span style="color:var(--slate);">Clear space = 1× the height of "C" on all sides</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--current-teal);font-size:0.9375rem;">✓ <span style="color:var(--slate);">Use on dark or light backgrounds only (high contrast)</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--warm-coral);font-size:0.9375rem;">✗ <span style="color:var(--slate);">Do not stretch, rotate, or skew the wordmark</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--warm-coral);font-size:0.9375rem;">✗ <span style="color:var(--slate);">Do not change the color of "CX" to anything other than teal</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--warm-coral);font-size:0.9375rem;">✗ <span style="color:var(--slate);">Do not add drop shadows, outlines, or effects</span></li>
+          <li style="display:flex;align-items:center;gap:8px;color:var(--warm-coral);font-size:0.9375rem;">✗ <span style="color:var(--slate);">Do not place on busy or low-contrast backgrounds</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="guide-section" id="components">
+    <div class="container">
+      <div class="section-label">Components</div>
+      <h2>UI Components</h2>
+      <p>Reusable interface elements that maintain consistency across all branded touchpoints.</p>
+
+      <div class="component-row">
+        <h4>Buttons</h4>
+        <a class="btn btn-primary">Primary Button →</a>
+        <a class="btn btn-dark">Dark Button →</a>
+        <a class="btn btn-primary btn-sm">Small Primary</a>
+        <a class="btn btn-dark btn-sm">Small Dark</a>
+      </div>
+
+      <div class="component-row" style="background:var(--deep-tide); padding:32px; border-radius:var(--radius-md);">
+        <h4 style="color:var(--stone);">Buttons on Dark</h4>
+        <a class="btn btn-primary">Primary Button →</a>
+        <a class="btn btn-outline">Outline Button →</a>
+      </div>
+
+      <div class="component-row" style="margin-top:32px;">
+        <h4>Section Labels</h4>
+        <div class="section-label">Section Label</div>
+      </div>
+
+      <div class="component-row" style="margin-top:16px;">
+        <h4>Badge</h4>
+        <div class="hero-badge"><span>eCommerce CX Specialist</span></div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <h4 style="font-size:0.875rem; color:var(--stone); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Form Elements</h4>
+        <div style="max-width:400px;">
+          <div class="form-group">
+            <label for="demo-input">Text Input</label>
+            <input type="text" id="demo-input" placeholder="Placeholder text">
+          </div>
+          <div class="form-group">
+            <label for="demo-select">Select</label>
+            <select id="demo-select">
+              <option>Select an option...</option>
+              <option>Option A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <h4 style="font-size:0.875rem; color:var(--stone); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">Iconography</h4>
+        <p style="margin-bottom:16px;">Use emoji or line-style SVG icons at 1.5px stroke weight with rounded caps. Color: Current Teal on dark, Slate on light.</p>
+        <div style="display:flex; gap:24px;">
+          <div class="service-icon">🔍</div>
+          <div class="service-icon">⚙️</div>
+          <div class="service-icon">🤝</div>
+          <div class="service-icon">📊</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="guide-section" id="voice">
+    <div class="container">
+      <div class="section-label">Brand Voice</div>
+      <h2>Voice & Tone</h2>
+      <p>Current CX speaks like a senior CX leader giving a colleague honest, direct advice. Confident but warm. Specific but approachable.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-bottom:48px;">
+        <div style="text-align:center; padding:32px 16px; background:var(--snow); border-radius:var(--radius-md); border:1px solid var(--mist);">
+          <h3 style="color:var(--current-teal); margin-bottom:8px;">Confident</h3>
+          <p style="font-size:0.875rem; color:var(--stone); margin:0 auto;">We know what works because we've done it.</p>
+        </div>
+        <div style="text-align:center; padding:32px 16px; background:var(--snow); border-radius:var(--radius-md); border:1px solid var(--mist);">
+          <h3 style="color:var(--current-teal); margin-bottom:8px;">Direct</h3>
+          <p style="font-size:0.875rem; color:var(--stone); margin:0 auto;">Short sentences. Clear outcomes. No filler.</p>
+        </div>
+        <div style="text-align:center; padding:32px 16px; background:var(--snow); border-radius:var(--radius-md); border:1px solid var(--mist);">
+          <h3 style="color:var(--current-teal); margin-bottom:8px;">Warm</h3>
+          <p style="font-size:0.875rem; color:var(--stone); margin:0 auto;">We're on your side, not above you.</p>
+        </div>
+        <div style="text-align:center; padding:32px 16px; background:var(--snow); border-radius:var(--radius-md); border:1px solid var(--mist);">
+          <h3 style="color:var(--current-teal); margin-bottom:8px;">Specific</h3>
+          <p style="font-size:0.875rem; color:var(--stone); margin:0 auto;">Real numbers, real results, real talk.</p>
+        </div>
+      </div>
+
+      <div class="voice-grid">
+        <div class="voice-card voice-do">
+          <h4 style="color:var(--current-teal);">✓ Do</h4>
+          <ul>
+            <li>Use second person — "you" and "your"</li>
+            <li>Lead with outcomes: "Reduce churn by 30%"</li>
+            <li>Be specific: "Improved NPS by 20 points"</li>
+            <li>Use short, punchy sentences</li>
+            <li>Address pain points directly</li>
+            <li>Use active voice: "We build systems"</li>
+          </ul>
+        </div>
+        <div class="voice-card voice-dont">
+          <h4 style="color:var(--warm-coral);">✗ Don't</h4>
+          <ul>
+            <li>Use buzzwords: "synergy", "best-in-class"</li>
+            <li>Use passive voice: "Systems are built"</li>
+            <li>Be vague: "We improve customer experience"</li>
+            <li>Use corporate jargon or acronym soup</li>
+            <li>Over-promise without specifics</li>
+            <li>Write paragraphs when a sentence will do</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:48px; padding:32px; background:var(--deep-tide); border-radius:var(--radius-lg);">
+        <h3 style="color:var(--snow); margin-bottom:24px;">Copy Examples</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          <div>
+            <p style="font-size:0.8125rem; color:var(--warm-coral); margin-bottom:8px; font-weight:600;">✗ BEFORE</p>
+            <p style="color:var(--stone); font-size:0.9375rem;">"We leverage innovative solutions to optimize your customer experience journey through synergistic partnerships."</p>
+          </div>
+          <div>
+            <p style="font-size:0.8125rem; color:var(--current-teal); margin-bottom:8px; font-weight:600;">✓ AFTER</p>
+            <p style="color:var(--mist); font-size:0.9375rem;">"We help your team resolve tickets faster, keep customers longer, and spend less doing it."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Current CX. Brand Style Guide — Internal Use.</p>
+        <a href="index.html" class="btn btn-outline btn-sm">← Back to Site</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
